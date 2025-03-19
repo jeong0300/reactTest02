@@ -1,0 +1,12 @@
+.flexItem {
+  display: flex;
+  max-width: 50%;
+}
+
+.leftItems {
+  display: flex;
+  flex-direction: column;
+}
+
+.rightItem {
+}

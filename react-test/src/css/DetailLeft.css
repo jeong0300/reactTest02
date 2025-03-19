@@ -1,0 +1,42 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 50%;
+  justify-content: center;
+}
+
+.mainPhoto {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 90%;
+  height: 400px;
+  margin-bottom: 10px;
+}
+
+.mainPhoto img {
+  width: 100%;
+  max-width: 60%;
+  height: auto;
+}
+
+.etcPhoto {
+  width: 90%;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.photoBox {
+  display: flex;
+  align-items: center;
+}
+
+.photo {
+  max-width: 150px;
+  height: 150px;
+  cursor: pointer;
+  border: 1px solid rgb(143, 143, 143);
+  border-radius: 5px;
+}

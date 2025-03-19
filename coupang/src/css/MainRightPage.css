@@ -1,0 +1,239 @@
+/* 전체 */
+.rightBox {
+  width: 100%;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 타이틀 */
+.headName {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 아이콘 */
+.icons {
+  display: flex;
+  gap: 20px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.customIcon {
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 5px;
+  font-size: 20px;
+}
+
+.underTitle {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: -35px;
+  color: blue;
+}
+
+/* 별 커스텀 */
+.ant-rate-star-full .ant-rate-star-second,
+.ant-rate-star-half .ant-rate-star-first,
+.ant-rate-star:hover,
+.ant-rate-star:hover {
+  color: #e89a39 !important;
+}
+
+.rate,
+.ant-rate-star {
+  font-size: 16px;
+  margin-right: 1px !important;
+}
+
+.titleHr {
+  width: 100%;
+  height: 1px;
+  background-color: rgb(197, 197, 197);
+  opacity: 0.8;
+  border: none;
+  margin-top: -10px;
+}
+
+/* 가격 부분 */
+.price {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.beforePrice {
+  text-decoration: line-through;
+  color: rgb(177, 177, 177);
+  margin-left: 5px;
+}
+
+.markIcon {
+  margin: 3px 0 0 10px;
+  cursor: pointer;
+}
+
+.afterPrice {
+  display: flex;
+  align-items: center;
+  margin-top: -20px;
+}
+
+.afterPrice h2 {
+  color: rgb(202, 33, 33);
+}
+
+.rocketIcon {
+  width: 80px;
+  margin: 5px 0 0 10px;
+}
+
+.priceHr {
+  width: 100%;
+  height: 1px;
+  background-color: rgb(197, 197, 197);
+  opacity: 0.3;
+  border: none;
+  margin-top: -5px;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+}
+
+.date b {
+  color: green;
+  font-size: 14px;
+}
+
+.greenFont {
+  color: green;
+  font-size: 13px;
+  margin: 3px 0 0 5px;
+}
+
+.blackFont {
+  font-size: 12px;
+  margin: 3px 0 0 5px;
+}
+
+/* 배달 라디오 */
+.radios {
+  margin: 10px 0 0 -5px;
+}
+
+.rocketRadio {
+  margin-bottom: 20px;
+}
+
+/* 버튼들 */
+.buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.inputNum {
+  height: 35px;
+  width: 70px !important;
+  border: 1px solid rgb(138, 138, 138) !important;
+  border-radius: 0px;
+  outline: none !important;
+}
+
+.inputNum:hover,
+.inputNum:focus,
+.inputNum:active {
+  border: 1px solid rgb(138, 138, 138) !important;
+  outline: none !important;
+}
+
+.cartBtn {
+  width: 100%;
+  max-width: 43%;
+  height: 35px;
+  border: 1px solid rgb(114, 114, 252);
+  background-color: white;
+  color: rgb(114, 114, 252);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cartBtn:hover {
+  border: 1px solid rgb(81, 81, 198);
+  color: rgb(81, 81, 198);
+}
+
+.buyBtn {
+  width: 100%;
+  max-width: 43%;
+  height: 35px;
+  border: 1px solid rgb(114, 114, 252);
+  background-color: rgb(114, 114, 252);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.buyBtn:hover {
+  background-color: rgb(81, 81, 198);
+}
+
+.btnHr {
+  width: 100%;
+  height: 1px;
+  background-color: rgb(197, 197, 197);
+  opacity: 0.3;
+  border: none;
+  margin-top: 20px;
+}
+
+/* 제품 이미지 */
+.productBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.colorName {
+  font-size: 13px;
+}
+
+.imagesWrapper {
+  display: flex;
+  position: relative;
+}
+
+.imageContainer {
+  margin-right: 10px;
+}
+
+.productImage {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: border 0.3s ease;
+}
+
+.productImage.selected {
+  border: 1px solid blue;
+}
+
+.imageContainer.selected::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: url(../image/coupangIcons.png) no-repeat center center;
+  top: -6px;
+  right: -6px;
+  z-index: 10;
+  display: block;
+}

@@ -1,0 +1,11 @@
+.tableContainer {
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.tableContainer Table {
+  margin-top: 10px !important;
+}
