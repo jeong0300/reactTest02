@@ -6,13 +6,24 @@ import "../css/MainPage.css";
 
 const MainPage = () => {
   const [product, setProduct] = useState("핑크블루");
+  // 호버 시 상태 변경
+  const [hoveredProduct, setHoveredProduct] = useState(null);
 
   return (
     <>
       <div className="mainPage">
         <div className="topPage">
-          <MainLeftPage product={product} />
-          <MainRightPage setProduct={setProduct} product={product} />
+          <MainRightPage
+            setProduct={setProduct}
+            product={product}
+            setHoveredProduct={setHoveredProduct}
+          />
+          <MainLeftPage
+            setProduct={setProduct}
+            product={product}
+            hoveredProduct={hoveredProduct}
+            setHoveredProduct={setHoveredProduct}
+          />
         </div>
         <div className="bottomPage">
           <MainBottomPage />

@@ -1,6 +1,7 @@
 .flexItem {
   display: flex;
   max-width: 50%;
+  margin-top: 20px;
 }
 
 .leftItems {
@@ -9,4 +10,13 @@
 }
 
 .rightItem {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.MainImg {
+  width: 100%;
+  max-width: 80%;
 }

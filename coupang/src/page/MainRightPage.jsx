@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { HeartOutlined, ShareAltOutlined } from "@ant-design/icons";
 import "../css/MainRightPage.css";
-import { Button, InputNumber, notification, Rate } from "antd";
+import { InputNumber, notification, Rate } from "antd";
 
 // 이미지
 import markIcon from "../image/mark.svg";
@@ -14,14 +14,23 @@ import pink1 from "../image/pink1.jpg";
 import pinkBrown1 from "../image/pinkBrown1.jpg";
 
 const MainRightPage = (props) => {
-  const { product, setProduct } = props;
+  const { product, setProduct, setHoveredProduct } = props;
 
   // 다음날 날짜 가져오기
   const [deliveryDate, setDeliveryDate] = useState("");
+
   // 시간 계산
   const [orderTimeLeft, setOrderTimeLeft] = useState("");
+
   // 배달 라디오 버튼
   const [selectedDelivery, setSelectedDelivery] = useState("rocket");
+
+  // 수량에 따른 가격
+  const [price] = useState(12900);
+  const [number, setNumber] = useState(1);
+
+  const totalPrice = price * number;
+  const formattedTotal = new Intl.NumberFormat().format(totalPrice);
 
   // 이미지
   const images = [
@@ -57,9 +66,10 @@ const MainRightPage = (props) => {
       midnight.setHours(23, 59, 59, 999);
 
       const timeDiff = midnight - now;
-      const minutesLeft = Math.floor(timeDiff / 1000 / 60);
+      const hoursLeft = Math.floor(timeDiff / 1000 / 60 / 60);
+      const minutesLeft = Math.floor((timeDiff / 1000 / 60) % 60);
 
-      return `(${minutesLeft}분 내 주문 시 / 서울⋅경기 기준)`;
+      return `(${hoursLeft}시간 ${minutesLeft}분 내 주문 시 / 서울⋅경기 기준)`;
     };
 
     setOrderTimeLeft(calculateTimeLeft());
@@ -78,8 +88,19 @@ const MainRightPage = (props) => {
     });
   };
 
+  // 클릭 시 메인 이미지 변경
   const handleImageClick = (productName) => {
     setProduct(productName);
+  };
+
+  // 호버 시 메인 이미지 변경
+  const handleMouseOver = (productName) => {
+    setHoveredProduct(productName);
+  };
+
+  // 호버 상태 없애기 (메인 이미지는 클릭한 거여야 함)
+  const handleMouseOut = () => {
+    setHoveredProduct(null);
   };
 
   return (
@@ -108,7 +129,7 @@ const MainRightPage = (props) => {
           />
         </div>
         <div className="afterPrice">
-          <h2> 12,900원 </h2>
+          <h2>{formattedTotal}원</h2>
           <img className="rocketIcon" src={rocketIcon} alt="rocket icon" />
           <img
             className="markIcon"
@@ -152,9 +173,9 @@ const MainRightPage = (props) => {
             className="inputNum"
             min={1}
             max={10}
-            defaultValue={1}
-            onChange={(value) => {}}
-          ></InputNumber>
+            value={number}
+            onChange={(value) => setNumber(value)}
+          />
           <button className="cartBtn" type="button" onClick={alert}>
             장바구니 담기
           </button>
@@ -179,6 +200,8 @@ const MainRightPage = (props) => {
                   src={image.src}
                   alt={image.alt}
                   onClick={() => handleImageClick(image.name)}
+                  onMouseOver={() => handleMouseOver(image.name)}
+                  onMouseOut={handleMouseOut}
                   className={"productImage"}
                 />
                 <div className="checked"></div>
