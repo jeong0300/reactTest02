@@ -212,6 +212,7 @@
 
 .imageContainer {
   margin-right: 10px;
+  position: relative;
 }
 
 .productImage {
@@ -222,18 +223,17 @@
   transition: border 0.3s ease;
 }
 
-.productImage.selected {
+.imageContainer.selected .productImage {
   border: 1px solid blue;
 }
 
-.imageContainer.selected::after {
+.imageContainer.selected .checked::after {
   content: "";
   position: absolute;
   width: 20px;
   height: 20px;
   background: url(../image/coupangIcons.png) no-repeat center center;
-  top: -6px;
-  right: -6px;
-  z-index: 10;
-  display: block;
+  bottom: 0;
+  right: -4px;
+  z-index: 2;
 }

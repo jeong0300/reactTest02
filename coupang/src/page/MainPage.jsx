@@ -11,7 +11,7 @@ const MainPage = () => {
     <>
       <div className="mainPage">
         <div className="topPage">
-          <MainLeftPage />
+          <MainLeftPage product={product} />
           <MainRightPage setProduct={setProduct} product={product} />
         </div>
         <div className="bottomPage">

@@ -169,15 +169,19 @@ const MainRightPage = (props) => {
           </p>
           <div className="imagesWrapper">
             {images.map((image, index) => (
-              <div key={index} className="imageContainer">
+              <div
+                key={index}
+                className={`imageContainer ${
+                  product === image.name ? "selected" : ""
+                }`}
+              >
                 <img
                   src={image.src}
                   alt={image.alt}
                   onClick={() => handleImageClick(image.name)}
-                  className={`productImage ${
-                    product === image.name ? "selected" : ""
-                  }`}
+                  className={"productImage"}
                 />
+                <div className="checked"></div>
               </div>
             ))}
           </div>
